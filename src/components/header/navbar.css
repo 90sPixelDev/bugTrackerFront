@@ -7,6 +7,7 @@
 	--btn-bg-color: #1a1a1a;
 	--btn-hv-border-color: #24b9e3;
 	--nav-bg-color: #ececec;
+	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 [data-theme='dark'] {
 	--main-text-color: rgba(237, 237, 237, 0.87);
@@ -17,36 +18,7 @@
 	--btn-bg-color: #7a7a7a;
 	--btn-hv-border-color: #339ebc;
 	--nav-bg-color: rgb(70, 70, 70);
-}
-
-a {
-	font-weight: 500;
-	color: var(--main-text-color);
-	text-decoration: inherit;
-}
-a:hover {
-	color: var(--a-hvr-color);
-}
-
-h1 {
-	margin-left: 1rem;
-	font-size: 3.2em;
-	line-height: 0.5;
-
-	color: var(--main-text-color);
-}
-
-button {
-	border-radius: 8px;
-	border: 2px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	color: var(--btn-color);
-	background-color: var(--btn-bg-color);
-	cursor: pointer;
-	transition: border-color 0.25s;
+	--bx-sh-setting: 0 5px 5px rgba(255, 255, 255, 1);
 }
 
 .nb-button-container {
@@ -56,20 +28,13 @@ button {
 	margin-right: 1rem;
 }
 
-button:hover {
-	border-color: var(--btn-hv-border-color);
-}
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-}
-
 .navbar {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
 	border-radius: 0 0 3rem 3rem;
 
+	box-shadow: var(--bx-sh-setting);
 	background-color: var(--nav-bg-color);
 }
 

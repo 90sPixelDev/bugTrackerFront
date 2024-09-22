@@ -1,13 +1,13 @@
 [data-theme='light'] {
-	--bg-color: rgba(0, 0, 0, 0.1);
+	--bg-color: rgba(0, 0, 0, 0.025);
 }
 [data-theme='dark'] {
-	--bg-color: rgba(255, 255, 255, 0.1);
+	--bg-color: rgba(255, 255, 255, 0.025);
 }
 
 .main-content-wrapper {
 	flex: 1;
-	margin: 1rem 0;
+	/* margin: 1rem 0; */
 	border-radius: 2rem;
 
 	background-color: var(--bg-color);

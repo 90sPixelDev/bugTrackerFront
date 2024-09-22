@@ -1,11 +1,13 @@
 import './App.css';
-import { Body, Footer, Navbar } from './components';
+import { Body, Footer, Navbar, Projects } from './components';
 
 function App() {
 	return (
 		<div className='wrapper'>
 			<Navbar />
-			<Body />
+			<Body>
+				<Projects />
+			</Body>
 			<Footer />
 		</div>
 	);

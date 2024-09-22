@@ -1,5 +1,10 @@
+import { ReactNode } from 'react';
 import './body.css';
 
-export default function Body() {
-	return <div className='main-content-wrapper'>test</div>;
+type Props = {
+	children: ReactNode;
+};
+
+export default function Body({ children }: Props) {
+	return <div className='main-content-wrapper'>{children}</div>;
 }
