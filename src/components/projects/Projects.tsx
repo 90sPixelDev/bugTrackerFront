@@ -6,7 +6,7 @@ import './projects.css';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Projects() {
-	const apiData = useProjects();
+	const { apiData } = useProjects();
 
 	return (
 		<div className='projects'>

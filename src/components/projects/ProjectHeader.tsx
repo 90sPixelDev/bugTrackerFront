@@ -1,7 +1,5 @@
 import './projectHeader.css';
 
-import React from 'react';
-
 export default function ProjectHeader() {
 	return (
 		<div className='project-header'>

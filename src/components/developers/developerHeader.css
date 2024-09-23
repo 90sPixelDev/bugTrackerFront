@@ -1,0 +1,23 @@
+[data-theme='light'] {
+	--dev-header-color: rgb(70, 70, 70);
+	--dev-header-text: #ececec;
+}
+[data-theme='dark'] {
+	--dev-header-color: rgba(255, 255, 255, 0.75);
+	--dev-header-text: black;
+}
+
+.developer-header {
+	display: flex;
+	margin-top: 1rem;
+	color: var(--proj-header-text);
+	background-color: var(--proj-header-color);
+
+	p {
+		font-weight: 700;
+	}
+
+	p:not(:first-child) {
+		padding-left: 1rem;
+	}
+}

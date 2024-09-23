@@ -33,5 +33,5 @@ export default function useProjects() {
 		getApiData();
 	}, []);
 
-	return apiData;
+	return { apiData };
 }
