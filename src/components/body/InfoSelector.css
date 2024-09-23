@@ -1,0 +1,18 @@
+[data-theme='light'] {
+	--info-selector-bg-color: #ececec;
+	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 0.25);
+}
+[data-theme='dark'] {
+	--info-selector-bg-color: rgb(70, 70, 70);
+	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 1);
+}
+
+.info-selector {
+	display: flex;
+	justify-content: space-around;
+	margin: 1rem 0;
+	padding: 1rem;
+
+	background-color: var(--info-selector-bg-color);
+	box-shadow: var(--bx-sh-setting);
+}

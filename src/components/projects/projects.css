@@ -9,7 +9,9 @@
 
 .projects {
 	display: flex;
+	flex-direction: column;
 	margin: 1rem 1rem;
+	padding: 0 1rem 1rem 1rem;
 	border-radius: 1rem;
 	min-height: 7vh;
 

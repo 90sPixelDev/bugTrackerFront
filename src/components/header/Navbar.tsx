@@ -9,7 +9,6 @@ export default function Navbar() {
 		<div className='navbar'>
 			<h1>Bug Tracker 101</h1>
 			<div className='nb-button-container'>
-				<button>Log In</button>
 				<button
 					id='theme-change-btn'
 					title='Change Theme'
