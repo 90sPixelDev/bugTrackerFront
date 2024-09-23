@@ -1,0 +1,13 @@
+.add-proj-container {
+	display: flex;
+	margin-top: 1rem;
+	align-items: center;
+	gap: 1rem;
+
+	input {
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+
+		font-size: 1rem;
+	}
+}

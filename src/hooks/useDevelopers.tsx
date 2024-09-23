@@ -8,8 +8,15 @@ type Developer = {
 
 function useDevelopers() {
 	const [apiData, setApiData] = useState<Developer[]>([]);
+	const [refresh, setRefresh] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	async function addDev(devNameText: string) {
+	const refreshDevsList = () => {
+		setRefresh((prevState) => !prevState);
+		console.log('useDev Refresh: ', refresh);
+	};
+
+	const addDev = async (devNameText: string) => {
 		const newData = {
 			devName: devNameText,
 		};
@@ -23,34 +30,59 @@ function useDevelopers() {
 			}
 
 			const data = await response.data;
-			console.log(data.data);
+			console.log(data);
 		} catch (err: unknown) {
 			console.error((err as Error).message);
 		}
-	}
+	};
 
-	async function getApiData() {
+	const deleteDev = async (devId: number) => {
 		try {
-			const response = await axios.get(
-				'http://localhost:8080/get/devs'
+			const response = await axios.delete(
+				`http://localhost:8080/delete/dev/${devId}`
 			);
 			if (!response.status) {
 				throw new Error(`Response status: ${response.status}`);
 			}
 
 			const data = await response.data;
-			console.log(data.data);
-			setApiData(data.data);
+			console.log(data);
 		} catch (err: unknown) {
 			console.error((err as Error).message);
 		}
-	}
+	};
+
+	const getDevelopersData = async () => {
+		try {
+			const response = await axios.get(
+				'http://localhost:8080/get/devs'
+			);
+			const data = await response.data;
+			if (!response.status) {
+				throw new Error(`Response status: ${response.status}`);
+			}
+
+			setApiData([...data.data]);
+			setIsLoading(false);
+		} catch (err: unknown) {
+			console.error((err as Error).message);
+		}
+	};
 
 	useEffect(() => {
-		getApiData();
-	}, []);
+		setIsLoading(true);
+		getDevelopersData();
+	}, [refresh]);
 
-	return { apiData, addDev };
+	return {
+		apiData,
+		deleteDev,
+		refresh,
+		refreshDevsList,
+		getDevelopersData,
+		addDev,
+		isLoading,
+	};
 }
 
 export default useDevelopers;

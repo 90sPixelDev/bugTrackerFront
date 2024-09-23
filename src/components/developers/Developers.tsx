@@ -7,21 +7,25 @@ import DeveloperItem from './DeveloperItem';
 import useDevelopers from '../../hooks/useDevelopers';
 
 import { v4 as uuidv4 } from 'uuid';
+import { ReactNode } from 'react';
 
 function Developers() {
-	const { apiData } = useDevelopers();
+	const { apiData, isLoading, refreshDevsList } = useDevelopers();
+
+	const devsListElement: ReactNode = apiData?.map((dev) => (
+		<DeveloperItem
+			key={uuidv4()}
+			devId={dev.devId}
+			devName={dev.devName}
+			refreshDevsList={refreshDevsList}
+		/>
+	));
 
 	return (
 		<div className='developers'>
-			<AddDev />
+			<AddDev triggerRefresh={refreshDevsList} />
 			<DeveloperHeader />
-			{apiData.map((dev) => (
-				<DeveloperItem
-					key={uuidv4()}
-					devId={dev.devId}
-					devName={dev.devName}
-				/>
-			))}
+			{!isLoading ? devsListElement : <p>Loading...</p>}
 		</div>
 	);
 }

@@ -9,29 +9,82 @@ type Project = {
 	dateCreated: string;
 };
 
-export default function useProjects() {
+function useProjects() {
 	const [apiData, setApiData] = useState<Project[]>([]);
+	const [refresh, setRefresh] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	async function getApiData() {
+	const refreshProjectList = () => {
+		setRefresh((prevState) => !prevState);
+		console.log('useProjects Refresh: ', refresh);
+	};
+
+	const addProject = async (projectName: string) => {
+		const newData = {
+			projectTitle: projectName,
+		};
+		console.log(newData);
 		try {
-			const response = await axios.get(
-				'http://localhost:8080/get/projects'
+			const response = await axios.post(
+				'http://localhost:8080/add/project',
+				newData
 			);
 			if (!response.status) {
 				throw new Error(`Response status: ${response.status}`);
 			}
 
 			const data = await response.data;
-			console.log(data.data);
-			setApiData(data.data);
+			console.log(data);
+		} catch (err: unknown) {
+			console.error((err as Error).message);
+		}
+	};
+
+	const deleteProject = async (projectId: number) => {
+		try {
+			const response = await axios.delete(
+				`http://localhost:8080/delete/project/${projectId}`
+			);
+			if (!response.status) {
+				throw new Error(`Response status: ${response.status}`);
+			}
+
+			const data = await response.data;
+			console.log(data);
+		} catch (err: unknown) {
+			console.error((err as Error).message);
+		}
+	};
+
+	async function getProjectsData() {
+		try {
+			const response = await axios.get(
+				'http://localhost:8080/get/projects'
+			);
+			const data = await response.data.data;
+			if (!response.status) {
+				throw new Error(`Response status: ${response.status}`);
+			}
+
+			setApiData([...data]);
+			setIsLoading(false);
 		} catch (err: unknown) {
 			console.error((err as Error).message);
 		}
 	}
 
 	useEffect(() => {
-		getApiData();
-	}, []);
+		setIsLoading(true);
+		getProjectsData();
+	}, [refresh]);
 
-	return { apiData };
+	return {
+		apiData,
+		isLoading,
+		refreshProjectList,
+		deleteProject,
+		addProject,
+	};
 }
+
+export default useProjects;
