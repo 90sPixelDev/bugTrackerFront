@@ -23,7 +23,11 @@ function AddDev(props: Props) {
 
 	return (
 		<div className='add-dev-container'>
-			<input type='text' onChange={updateDevNameText} />
+			<input
+				type='text'
+				placeholder='name'
+				onChange={updateDevNameText}
+			/>
 			<button onClick={addDevFunc}>Add New Dev</button>
 		</div>
 	);

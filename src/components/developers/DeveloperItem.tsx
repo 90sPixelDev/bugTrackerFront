@@ -21,7 +21,7 @@ function DeveloperItem({ devId, devName, refreshDevsList }: Developer) {
 			<p className='dev-name'>{devName}</p>
 			<div className='dev-btn-container'>
 				<button className='dev-btn' onClick={deleteDevFunc}>
-					Delete
+					X
 				</button>
 			</div>
 		</div>

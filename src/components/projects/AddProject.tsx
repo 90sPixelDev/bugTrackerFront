@@ -23,7 +23,11 @@ function AddProject(props: Props) {
 
 	return (
 		<div className='add-proj-container'>
-			<input type='text' onChange={updateProjectName} />
+			<input
+				type='text'
+				placeholder='title'
+				onChange={updateProjectName}
+			/>
 			<button onClick={addProjFunc}>Add New Project</button>
 		</div>
 	);

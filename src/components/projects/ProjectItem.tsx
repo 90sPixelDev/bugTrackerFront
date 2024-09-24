@@ -27,7 +27,7 @@ export default function ProjectItem({
 			<p className='proj-date'>{projDateCreated}</p>
 			<div className='proj-btn-container'>
 				<button className='proj-btn' onClick={deleteDevFunc}>
-					Delete
+					X
 				</button>
 			</div>
 		</div>

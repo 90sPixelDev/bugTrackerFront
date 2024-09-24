@@ -1,0 +1,51 @@
+[data-theme='light'] {
+	--border-color: rgb(70, 70, 70);
+}
+[data-theme='dark'] {
+	--border-color: #ececec;
+}
+
+.bug-item {
+	display: flex;
+
+	border-left: 1px solid var(--border-color);
+	border-right: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+
+	p {
+		margin: 0.5rem 0;
+		padding: 0.5rem 0;
+	}
+
+	p:not(:first-child) {
+		border-left: 1px solid var(--border-color);
+		/* padding-left: 1rem; */
+	}
+}
+
+.bug-id {
+	width: 10%;
+	text-align: center;
+}
+
+.bug-name {
+	width: 40%;
+}
+.bug-priority {
+	width: 15%;
+	text-align: center;
+}
+.bug-projectId {
+	width: 7%;
+}
+.bug-timeCreated {
+	width: 30%;
+	font-size: small;
+	text-align: center;
+}
+.bug-btn-container {
+	width: 10%;
+	display: flex;
+	place-items: center;
+	justify-content: center;
+}

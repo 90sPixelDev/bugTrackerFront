@@ -1,0 +1,40 @@
+[data-theme='light'] {
+	--bug-head-color: rgb(70, 70, 70);
+	--bug-head-text: #ececec;
+}
+[data-theme='dark'] {
+	--bug-head-color: rgba(255, 255, 255, 0.75);
+	--bug-head-text: black;
+}
+
+.bug-header {
+	display: flex;
+	margin-top: 1rem;
+	color: var(--bug-head-text);
+	background-color: var(--bug-head-color);
+
+	p {
+		font-weight: 700;
+	}
+
+	p:not(:first-child) {
+		padding-left: 1rem;
+	}
+}
+
+.bug-header-id {
+	width: 8%;
+	text-align: center;
+}
+.bug-header-name {
+	width: 35%;
+}
+.bug-header-priority {
+	width: 11%;
+}
+.bug-header-projectId {
+	width: 10%;
+}
+.bug-header-timeCreated {
+	width: 20%;
+}

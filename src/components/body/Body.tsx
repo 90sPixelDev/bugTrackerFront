@@ -3,6 +3,7 @@ import InfoSelector from './InfoSelector';
 import Developers from '../developers/Developers';
 import Projects from '../projects/Projects';
 import { ReactNode, useEffect, useState } from 'react';
+import Bugs from '../bugs/Bugs';
 
 export default function Body() {
 	const [dataSelector, setDataSelector] = useState<string>('projects');
@@ -33,7 +34,7 @@ export default function Body() {
 					setBodyDataView(<Developers />);
 					break;
 				case 'bugs':
-					setBodyDataView(<Projects />);
+					setBodyDataView(<Bugs />);
 					break;
 			}
 		};
