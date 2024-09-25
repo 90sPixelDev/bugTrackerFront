@@ -7,7 +7,7 @@ type Bugs = {
 	bugDescription: string;
 	priority: string;
 	timeCreated: string;
-	projectId: string;
+	project: string;
 };
 
 function useBugs() {
@@ -29,7 +29,7 @@ function useBugs() {
 			bugName: bugNameText,
 			bugDescription: bugNameText,
 			priority: bugPriorityText,
-			projects: { projectId: bugPIDText },
+			project: { projectId: bugPIDText },
 		};
 		try {
 			const response = await axios.post(
@@ -74,7 +74,6 @@ function useBugs() {
 			}
 
 			setApiData(data);
-			console.log(data);
 			setIsLoading(false);
 		} catch (err: unknown) {
 			console.error((err as Error).message);

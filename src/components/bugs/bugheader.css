@@ -23,14 +23,14 @@
 }
 
 .bug-header-id {
-	width: 8%;
+	width: 9%;
 	text-align: center;
 }
 .bug-header-name {
-	width: 35%;
+	width: 37%;
 }
 .bug-header-priority {
-	width: 11%;
+	width: 9%;
 }
 .bug-header-projectId {
 	width: 10%;

@@ -14,7 +14,6 @@
 
 	p {
 		margin: 0.5rem 0;
-		padding: 0.5rem 0;
 	}
 
 	p:not(:first-child) {
@@ -26,22 +25,29 @@
 .bug-id {
 	width: 10%;
 	text-align: center;
+	padding: 0.5rem 0;
 }
 
 .bug-name {
 	width: 40%;
+	padding-left: 1rem;
+	padding: 0.5rem 1rem;
 }
 .bug-priority {
 	width: 15%;
 	text-align: center;
+	padding: 0.5rem 0;
 }
-.bug-projectId {
+.bug-project {
 	width: 7%;
+	text-align: center;
+	padding: 0.5rem 0;
 }
 .bug-timeCreated {
 	width: 30%;
 	font-size: small;
 	text-align: center;
+	padding: 0.5rem 0;
 }
 .bug-btn-container {
 	width: 10%;

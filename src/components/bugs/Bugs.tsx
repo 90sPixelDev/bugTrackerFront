@@ -16,7 +16,7 @@ function Bugs() {
 			bugName={bug.bugName}
 			bugDescription={bug.bugDescription}
 			priority={bug.priority}
-			projectId={bug.projects.projectId}
+			project={bug.project.projectId}
 			timeCreated={bug.timeCreated}
 			refreshDevsList={refreshBugsList}
 		/>

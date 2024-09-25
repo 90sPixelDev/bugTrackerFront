@@ -8,7 +8,7 @@ type Props = {
 	bugDescription: string;
 	priority: string;
 	timeCreated: string;
-	projectId: string;
+	project: string;
 	refreshDevsList: () => void;
 };
 
@@ -16,7 +16,7 @@ function BugItem({
 	bugId,
 	bugName,
 	priority,
-	projectId,
+	project,
 	timeCreated,
 	refreshDevsList,
 }: Props) {
@@ -28,11 +28,11 @@ function BugItem({
 	};
 
 	return (
-		<div className='developer-item'>
+		<div className='bug-item'>
 			<p className='bug-id'>{bugId}</p>
 			<p className='bug-name'>{bugName}</p>
 			<p className='bug-priority'>{priority}</p>
-			<p className='bug-projectId'>{projectId}</p>
+			<p className='bug-project'>{project}</p>
 			<p className='bug-timeCreated'>{timeCreated}</p>
 			<div className='bug-btn-container'>
 				<button className='bug-btn' onClick={deleteBugFunc}>
