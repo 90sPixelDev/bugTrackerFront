@@ -10,14 +10,14 @@
 	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 [data-theme='dark'] {
-	--main-text-color: rgba(237, 237, 237, 0.87);
+	--main-text-color: rgba(255, 255, 255, 0.87);
 	--a-color: #339ebc;
 	--a-hvr-color: #339ebc;
 	--background-color: #181818;
-	--btn-color: #0d0d0d;
-	--btn-bg-color: #7a7a7a;
+	--btn-color: #000000;
+	--btn-bg-color: #8f8f8f;
 	--btn-hv-border-color: #339ebc;
-	--nav-bg-color: rgb(70, 70, 70);
+	--nav-bg-color: rgb(45, 45, 45);
 	--bx-sh-setting: 0 5px 5px rgba(255, 255, 255, 1);
 }
 

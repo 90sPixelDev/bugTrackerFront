@@ -1,9 +1,9 @@
 [data-theme='light'] {
-	--projects-bg-color: #ececec;
+	--devs-bg-color: #ececec;
 	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 [data-theme='dark'] {
-	--projects-bg-color: rgb(70, 70, 70);
+	--devs-bg-color: rgb(45, 45, 45);
 	--bx-sh-setting: 0 5px 5px rgba(0, 0, 0, 1);
 }
 
@@ -15,6 +15,6 @@
 	border-radius: 1rem;
 	min-height: 7vh;
 
-	background-color: var(--projects-bg-color);
+	background-color: var(--devs-bg-color);
 	box-shadow: var(--bx-sh-setting);
 }
