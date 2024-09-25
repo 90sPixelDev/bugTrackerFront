@@ -1,15 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-type Bugs = {
-	bugId: string;
-	bugName: string;
-	bugDescription: string;
-	priority: string;
-	timeCreated: string;
-	project: string;
-};
-
 function useBugs() {
 	const [apiData, setApiData] = useState([]);
 	const [refresh, setRefresh] = useState(false);

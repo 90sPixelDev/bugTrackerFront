@@ -6,10 +6,19 @@ import useBugs from '../../hooks/useBugs';
 import BugItem from './BugItem';
 import AddBug from './AddBug';
 
+type Bug = {
+	bugId: string;
+	bugName: string;
+	bugDescription: string;
+	priority: string;
+	timeCreated: string;
+	project: { projectId: string };
+};
+
 function Bugs() {
 	const { apiData, isLoading, refreshBugsList } = useBugs();
 
-	const bugListElement: ReactNode = apiData?.map((bug) => (
+	const bugListElement: ReactNode = apiData?.map((bug: Bug) => (
 		<BugItem
 			key={uuidv4()}
 			bugId={bug.bugId}
